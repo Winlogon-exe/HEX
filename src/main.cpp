@@ -1,12 +1,14 @@
 #include <QApplication>
+#include <qserialport.h>
 #include "debug.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Log::Debug::logMessage("debug",Log::Debug::Type::DEBUG);
-    Log::Debug::logMessage("system",Log::Debug::Type::SYSTEM);
-    Log::Debug::logMessage("info",Log::Debug::Type::INFO);
-    Log::Debug::logMessage("error",Log::Debug::Type::ERROR);
+    SR_DEBUG("TEST");
+    SR_ERROR("TEST");
+    SR_INFO("TEST");
+    SR_SYSTEM("TEST");
+    
     return a.exec();
 }

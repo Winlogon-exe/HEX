@@ -5,26 +5,30 @@
 
 namespace Log {
 
+    enum class Type {
+        SYSTEM,
+        DEBUG,
+        ERROR,
+        INFO
+    };
+
     class Debug {
     public:
-        enum class Type {
-            SYSTEM,
-            DEBUG,
-            ERROR,
-            INFO
-        };
-
-    public:
-        void static logMessage(const QString& message,Type type);
-    
-    private:
-        QString static getPrefix(Type type);
-        QString static getColorCode(Type type);
-        void static fillMap();
+        static void debug(const QString& msg) { print(msg,Type::DEBUG); };
+        static void info(const QString& msg)  { print(msg,Type::INFO);  };
+        static void system(const QString& msg){ print(msg,Type::SYSTEM);};
+        static void error(const QString& msg) { print(msg,Type::ERROR); };
+        static void print(const QString& msg,Type type);
 
     private:
-        //static std::map<QString,QString> prefixColor;
+        static QString getPrefix(Type type);
+        static QString getColorCode(Type type);
     };
+
+    #define SR_DEBUG(...) Log::Debug::debug(__VA_ARGS__)
+    #define SR_INFO(...) Log::Debug::info(__VA_ARGS__)
+    #define SR_SYSTEM(...) Log::Debug::system(__VA_ARGS__)
+    #define SR_ERROR(...) Log::Debug::error(__VA_ARGS__)
 }
 
 #endif //DEBUG_H
