@@ -1,4 +1,4 @@
-#include "debug.h"
+#include "Utils/HexDebug.h"
 
 void Log::Debug::print(const QString &msg, Type type)
 {

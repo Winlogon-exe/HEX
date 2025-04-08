@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(test_version VERSION 0.1 LANGUAGES CXX)
+project(Hex VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -13,11 +13,11 @@ find_package(QT NAMES Qt5 REQUIRED COMPONENTS Widgets SerialPort)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets SerialPort)
 
 set(HEADERS    
-        inc/debug.h
+        inc/Utils/HexDebug.h
 )
 
 set (SOURCES 
-        src/debug.cpp
+        src/Utils/HexDebug.cpp
         src/main.cpp
 )
 

@@ -1,6 +1,6 @@
 #include <QApplication>
 #include <qserialport.h>
-#include "debug.h"
+#include "Utils/HexDebug.h"
 
 int main(int argc, char *argv[])
 {
