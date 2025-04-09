@@ -14,11 +14,19 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets SerialPort)
 
 set(HEADERS    
         inc/Utils/HexDebug.h
+        
+        inc/Containers/Vector/HexVector.h
+        inc/Containers/Vector/DefaultAllocator.h
+        inc/Containers/Vector/VectorBase.h
 )
 
 set (SOURCES 
-        src/Utils/HexDebug.cpp
         src/main.cpp
+        src/Utils/HexDebug.cpp
+        
+        src/Containers/Vector/HexVector.cpp
+        src/Containers/Vector/DefaultAllocator.cpp
+        src/Containers/Vector/VectorBase.cpp
 )
 
 add_executable(${PROJECT_NAME} ${HEADERS} ${SOURCES})

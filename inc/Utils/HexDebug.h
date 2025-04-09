@@ -3,11 +3,11 @@
 
 #include <QDebug>
 
-namespace Log {
+namespace Utils {
 
-    enum class Type {
+    enum class Type : uint8_t {
         SYSTEM,
-        DEBUG,
+        DEBUG, 
         ERROR,
         INFO
     };
@@ -25,10 +25,10 @@ namespace Log {
         static QString getColorCode(Type type);
     };
 
-    #define SR_DEBUG(...) Log::Debug::debug(__VA_ARGS__)
-    #define SR_INFO(...) Log::Debug::info(__VA_ARGS__)
-    #define SR_SYSTEM(...) Log::Debug::system(__VA_ARGS__)
-    #define SR_ERROR(...) Log::Debug::error(__VA_ARGS__)
+    #define HEX_DEBUG(...) Utils::Debug::debug(__VA_ARGS__)
+    #define HEX_INFO(...) Utils::Debug::info(__VA_ARGS__)
+    #define HEX_SYSTEM(...) Utils::Debug::system(__VA_ARGS__)
+    #define HEX_ERROR(...) Utils::Debug::error(__VA_ARGS__)
 }
 
 #endif //DEBUG_H

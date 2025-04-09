@@ -1,13 +1,13 @@
 #include "Utils/HexDebug.h"
 
-void Log::Debug::print(const QString &msg, Type type)
+void Utils::Debug::print(const QString &msg, Type type)
 {
     QString color = getColorCode(type);
     QString prefix = getPrefix(type);
     qDebug().noquote().nospace() << "\033[" << color << prefix << "\033[0m" << msg;
 }
 
-QString Log::Debug::getPrefix(Type log)
+QString Utils::Debug::getPrefix(Type log)
 {
     switch (log)
     {
@@ -19,7 +19,7 @@ QString Log::Debug::getPrefix(Type log)
     return "[log]";
 }
 
-QString Log::Debug::getColorCode(Type type)
+QString Utils::Debug::getColorCode(Type type)
 {
     switch (type)
     {
