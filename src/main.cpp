@@ -1,6 +1,5 @@
 #include <QApplication>
 #include "Utils/HexDebug.h"
-#include "Containers/Vector/HexVector.h"
 
 int main(int argc, char *argv[])
 {
@@ -9,7 +8,6 @@ int main(int argc, char *argv[])
     HEX_ERROR("TEST");
     HEX_INFO("TEST");
     HEX_SYSTEM("TEST");
-    
     
     return a.exec();
 }

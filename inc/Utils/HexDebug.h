@@ -2,6 +2,7 @@
 #define  DEBUG_H
 
 #include <QDebug>
+#include <Core/Macros.h>
 
 namespace Utils {
 
@@ -21,7 +22,7 @@ namespace Utils {
         static void print(const QString& msg,Type type);
 
     private:
-        static QString getPrefix(Type type);
+        HEX_NODISCARD static QString getPrefix(Type type);
         static QString getColorCode(Type type);
     };
 
