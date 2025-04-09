@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
     HEX_ERROR("TEST");
     HEX_INFO("TEST");
     HEX_SYSTEM("TEST");
+    HEX_SYSTEM("TEST");
     
     return a.exec();
 }
